@@ -1,0 +1,61 @@
+ScreenManagement:
+
+    MainScreen:
+    ReadScreen:
+
+<MainScreen>:
+    name: 'main'
+
+    Image:
+        id: background
+        source: 'images\\app_background.jpg'
+        size: root.width, root.height
+
+    GridLayout:
+        cols: 1
+        rows: 5
+
+        Label:
+            font_size: 40
+            text: "Guardian Flash"
+            color: [0, 0, 0, 1]
+
+        Button:
+            size_hint: (1, 0.1)
+            text: "Read"
+            on_release: app.root.current = 'read'
+
+        Button:
+            size_hint: (1, .1)
+            text: "Add"
+
+        Button:
+            size_hint: (1, .1)
+            text: "Manage"
+
+        Button:
+            size_hint: (1, .1)
+            text: "Quit"
+            on_release: root.callback_quit()
+
+<ReadScreen>:
+    name: 'read'
+
+    canvas:
+        Rectangle:
+            pos: 0, 0
+
+    GridLayout:
+        cols: 1
+        rows: 2
+
+        Button:
+            size_hint: (0.5, 0.1)
+            text: "Go Back"
+            on_release: app.root.current = 'main'
+
+
+        Button:
+            size_hint: (.5, .1)
+            text: "Hello"
+
